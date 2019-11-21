@@ -33,7 +33,8 @@
 \newenvironment{comment}{}{}
 
 \title{Линал, билеты 13 -- 37}
-\author{Ирина Ткаченко :)}
+\author{Ирина Ткаченко :)\\
+			Павел Мартынов}
 \date{}
 
 \begin{document}
@@ -341,9 +342,9 @@ $z\cdot z'=|z|\cdot|z'|\cdot(\cos(\varphi+\varphi')+i\sin(\varphi+\varphi'))$
 
 \newpage
 \section{Операция сопряжения и деления на множестве комплексных чисел, основные свойства. Поле комплексных чисел. Свойства экспоненты чисто мнимого числа. Формулы Эйлера, Муавра, корня n – ой степени. Вычисление квадратного корня в алгебраическом виде. Примеры.}
-Сопоставим числу $z=x+iy$ число $\overline{z}=x-iy$. Тогда $\overline{z}$ -- \textbf{сопряжённо} к $z$ число. $z=r\cdot e^{i\varphi},\,\overline{z}=r\cdot e^{-i\varphi}$.
+Назовём \textbf{сопряжённым} к числу $z=x+iy$ число $\overline{z}=x-iy$. В показательной записи: $z=r\cdot e^{i\varphi},\,\overline{z}=r\cdot e^{-i\varphi}$.
 \n 
-\textbf{СВОЙСТВА}
+\textbf{Свойства:}
 \begin{enumerate}
     \item $\overline{\overline{z}}=z$
     \item $\overline{z}=z\,\Leftrightarrow\,z\in\R$
@@ -357,43 +358,109 @@ $z\cdot z'=|z|\cdot|z'|\cdot(\cos(\varphi+\varphi')+i\sin(\varphi+\varphi'))$
 Из свойства 8 следует, что $\mathbb{C}$ -- поле.
 \newline
 \newline
-Частным двух комплексных чисел называется такое $z$, что
-$$ z=\frac{z_1}{z_2}=\frac{x_1\cdot x_2+y_1\cdot y_2}{x_2^2+y_2^2}+i\cdot\frac{x_2\cdot y_1-x_1\cdot y_2}{x_2^2+y_2^2} = \frac{|z_1|}{|z_2|}\cdot(\cos(\varphi_1-\varphi_2)+i\cdot\sin(\varphi_1-\varphi_2)) $$
-$$ \overline{\bigg(\frac{z_1}{z_2}\bigg)}=\frac{\overline{z_1}}{\overline{z_2}} $$
+\textbf{Частным} двух комплексных чисел $z_1$ и $z_2$ называют такое $z$, что
+$$z=\frac{z_1}{z_2}=\frac{x_1\cdot x_2+y_1\cdot y_2}{x_2^2+y_2^2}+i\cdot\frac{x_2\cdot y_1-x_1\cdot y_2}{x_2^2+y_2^2} = \frac{|z_1|}{|z_2|}\cdot(\cos(\varphi_1-\varphi_2)+i\cdot\sin(\varphi_1-\varphi_2)) = \frac{r_1}{r_2} \cdot e^{i(\varphi_1 - \varphi_2)} $$
+
+Из этого получаем ещё одно свойство сопряжения:
+$$ \overline{\left(\frac{z_1}{z_2}\right)}=\frac{\overline{z_1}}{\overline{z_2}} $$
 \newpage
-\subsection{ФОРМУЛЫ ЭЙЛЕРА, ФОРМУЛЫ МУАВРА, КОРЕНЬ $n$-ОЙ СТЕПЕНИ}
+\subsection{Формулы Эйлера, формула Муавра, корень $n$-ой степени}
 \subsubsection{Формулы преобразований}
 \begin{enumerate}
-    \item $e^{i2\pi k}=1\:\forall\,k\in\Z$
-    \item $e^{i\varphi_1}\cdot e^{i\varphi_2}=e^{i(\varphi_1+\varphi_2)}$ (ахуеть да)
-    \item $e^{i(\varphi+2\pi k)}=e^{i\varphi}\:\forall\,k\in\Z$ (ещё больше аухеть да)
-    \item $|e^{i\varphi}|=1$ (ладно, этого я не ожидала)
+    \item $\forall\,k\in\Z:\;e^{i2\pi k}=1$
+    \item $e^{i\varphi_1}\cdot e^{i\varphi_2}=e^{i(\varphi_1+\varphi_2)}$
+    \item $e^{i(\varphi+2\pi k)}=e^{i\varphi}\:\forall\,k\in\Z$
+    \item $|e^{i\varphi}|=1$
     \item $e^{-i\varphi}=\frac{1}{e^{i\varphi}}\::\:e^{-i\varphi}=\overline{e^{i\varphi}}$
 \end{enumerate}
-\subsubsection{ФОРМУЛЫ ЭЙЛЕРА}
+\subsubsection{Формулы Эйлера}
     \begin{enumerate}
-        \item $\cos\varphi=\frac{e^{\varphi}+e^{-i\varphi}}{2}$
+        \item $\cos\varphi=\cfrac{e^{\varphi}+e^{-i\varphi}}{2}$
         \item $\sin\varphi=\cfrac{e^{\varphi}-e^{-i\varphi}}{2i}$
     \end{enumerate}
 \subsubsection{Формула Муавра}
     
-    $z^n=r^n\cdot(\cos(n\varphi)+i\sin(n\varphi))$
+    $$z = (\cos(\varphi) + i\sin(\varphi)) \; \Rightarrow \; z^n=r^n\cdot(\cos(n\varphi)+i\sin(n\varphi))$$
     
-\subsubsection{ИЗВЛЕЧЕНИЕ КОРНЯ $n$-ОЙ СТЕПЕНИ}
+\subsubsection{Извлечение корня $n$-ой степени}
     
-    $$\sqrt[n]{z}=r^{\frac{1}{n}}\cdot(\cos(\frac{\varphi+2\pi k}{n})+i\cdot \sin(\frac{\varphi+2\pi k}{n})$$
+    $$\sqrt[n]{z}=\sqrt[n]{r}\cdot\left(\cos\left(\frac{\varphi+2\pi k}{n}\right)+i\cdot \sin\left(\frac{\varphi+2\pi k}{n}\right)\right)$$
+    
+    Таким образом, у любого комплексного числа есть $n$ различных корней $n$-ой степени, так как в формулу можно подставить только $n$ различных $k$, потому как для $k_1 \equiv k_2 \mod (n)$ верно:
+    \begin{equation*}
+    	\begin{aligned}[t]
+    		\cos\left(\frac{\varphi+2\pi k_1}{n}\right) = \cos\left(\frac{\varphi+2\pi k_2}{n}\right) \\
+    		\sin\left(\frac{\varphi+2\pi k_2}{n}\right) = \sin\left(\frac{\varphi+2\pi k_2}{n}\right)
+    	\end{aligned}
+    \end{equation*}
 
 \newpage
 \section{Функции комплексного аргумента}
 \subsection{Экспонента}
-$$ exp(z)=e^{x+iy}=e^x\cdot e^{iy}=e^x(\cos y+i\sin y) $$
-ГРАФИК
+$$ exp(z)=e^{x+iy}=e^x\cdot e^{iy}=e^x(\cos y+i\sin y) = |z| \cdot e^{i \arg z} $$
 
 \subsection{Логарифм}
-$$ \log\,z=\log(|z|e^{i\varphi})=\log|z|+i\varphi+2\pi i n $$
+$$ \ln\,z=\ln(|z|e^{i \arg z})=\ln|z|+i\arg z+2\pi i k $$
 
 \subsection{Возведение в комплексную степень комплексного числа}
-$$ (x_1+iy_1)^{x_2+iy_2}=e^{(x_2+iy_2)\log(x_1+iy_1)}=e^{(x_2+y_2)\big(\log\sqrt{x_1^2+i y_1^2}+i(\arctan\frac{y_1}{x_1}+2\pi n)\big)},\,n\in\Z$$
+$$ (x_1+iy_1)^{x_2+iy_2}=e^{(x_2+iy_2)\ln(x_1+iy_1)}=e^{(x_2+y_2)\big(\ln\sqrt{x_1^2+i y_1^2}+i(\arctan\frac{y_1}{x_1}+2\pi n)\big)},\,n\in\Z$$
+
+\subsection{Тригонометрические функции}
+Для определения тригонометрических функций от комплексного аргумента сначала определим несколько вспомогательных функций:
+
+\subsubsection{Гиперболический синус:}
+	$$\sh x = \frac{e^x - e^{-x}}{2}$$
+	
+\subsubsection{Гиперболический косинус:}
+	$$\ch x = \frac{{e^x} + e^{-x}}{2}$$
+
+\subsubsection{Гиперболический тангенс:}
+	$$\th x = \frac{\sh x}{\ch x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
+	
+\subsubsection{Свойства гиперболических функций:}
+	\begin{enumerate}
+		\item $\ch^2x - \sh^2x = 1$
+		\item $\sh x = -i\sin(ix)$
+		\item $\ch x = \cos(ix)$
+		\item $\th x = -i\tg(ix)$
+	\end{enumerate}
+Стоит упомянуть, что гиперболический синус в устной речи называют \textit{шинусом}, а гиперболический косинус "--- \textit{чосинусом}.
+
+\subsubsection{Тригонометрические функции комплексного аргумента:}
+
+$\sphericalangle \: (a + bi) = z \in \mathbb{C}$, тогда:
+\begin{itemize}
+	\item $\sin z = \sin a \cos (bi) + \cos a \sin (bi) = \sin a \ch b + i\cos a \sh b$
+	\item $\cos z = \cos a \cos (bi) + \sin a \sin (bi) = \cos a \ch b - i\sin a \sh b$
+\end{itemize}
+
+
+Помимо этого, можно просто пользоваться выражением тригонометрических функций комплексного аргумента при помощи формулы Эйлера:
+
+\begin{itemize}
+	\item $\sin z = \frac{e^{iz} - e^{-iz}}{2i}$
+	\item $\cos z = \frac{e^{ix} + e^{-iz}}{2}$
+\end{itemize}
+
+\subsection{Обратные тригонометрические функции:}
+
+Для нахождения множества значений обратной тригонометрической функции от комплексного аргумента надо решать уравнение. Решим такие уравнения для обратных синуса и косинуса комплексного аргумента:
+
+\begin{equation*}
+	\begin{aligned}
+		\arccos z = v, \; \Rightarrow \cos(\arccos z) = \cos v, \; \Rightarrow z = \cos v = \frac{e^{iv} + e^{-iv}}{2},\; \Rightarrow e^{2iv} - e^{iv} \cdot (2z) + 1 = 0,\;\Rightarrow\\
+		\Rightarrow e^{iv} = \frac{2z + \sqrt{4z^2 - 4}}{2} = z + \sqrt{z^2 - 1},\;\Rightarrow v = -i \cdot \ln \left(z + \sqrt{z^2 - 1}\right) =\\
+		= -i \cdot \left(\ln |z + \sqrt{z^2 - 1}| + i \arg (z + \sqrt{z^2 - 1}) + 2\pi i k\right)
+	\end{aligned}	
+\end{equation*}
+
+\begin{equation*}
+	\begin{aligned}
+		\arcsin z = v, \; \Rightarrow \sin(\arcsin z) = \sin v, \; \Rightarrow z = \sin v = \frac{e^{iv} - e^{-iv}}{2i},\; \Rightarrow e^{2iv} - e^{iv} \cdot (2iz) - 1 = 0,\;\Rightarrow\\
+		\Rightarrow e^{iv} = \frac{2iz + \sqrt{4 - 4z^2}}{2} = iz + \sqrt{1 - z^2},\;\Rightarrow v = -i \cdot \ln \left(iz + \sqrt{1 - z^2}\right) =\\
+		= -i \cdot \left(\ln |iz + \sqrt{1 - z^2}| + i \arg (iz + \sqrt{1 - z^2}) + 2\pi i k\right)
+	\end{aligned}
+\end{equation*}
 
 \newpage
 \section{Линейная оболочка, линейная независимость векторов. Теорема о линейно независимых системах векторов,
@@ -791,7 +858,7 @@ $$ \begin{cases} ((A\cdot B)^T)_{ij}=(A\cdot B)_{ji}=\sum\limits_{r=1}^k a_{jr}\
 \end{comment}
 
 
-\subsection{Вспомогательны утверждения}
+\subsection{Вспомогательные утверждения}
 \subsubsection{Утверждение 1}
 Если $(A_1,\ldots,A_n)$ "--- линейно зависимая система векторов, то $\forall k \leq n:\:(\overline{A^k_1},\ldots,\overline{A^k_n})$ -- тоже линейно зависимая система векторов.
 
@@ -804,7 +871,7 @@ $(A_1,\ldots,A_n)$ "--- линейно зависимая система, сле
 Если $\exists k:\: (\overline{A_1^k},\ldots,\overline{A^k_n})$ -- линейно независимы, то $(A_1,\ldots,A_n)$ -- тоже линейно независимы. Доказывается от обратного.
 
 \subsubsection{Утверждение 2}
-Если $rg_{lin} = r$ и $(S_1, S_2, \ldots S_k)$ "--- линейно независимая система, то, если $\exists k < r:\:(\overline{A^k_1}\ldots \overline{A^k_r})$ "--- линейно независимая система векторов, то $(A_1, \ldots A_r)$ "--- линейно зависимая система векторов.
+Если $rg_{lin} = r$ и $(S_1, S_2, \ldots S_k)$ "--- линейно независимая система, то, если $\exists k < r:\:(\overline{A^k_1}\ldots \overline{A^k_r})$ "--- линейно зависимая система векторов, то $(A_1, \ldots A_r)$ "--- линейно зависимая система векторов.
 
 \textbf{Доказательство}
 
