@@ -31,6 +31,9 @@
 
 %хедлайнеры от павла
 \newenvironment{comment}{}{}
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
 
 \title{Линал, билеты 13 -- 37}
 \author{Ирина Ткаченко :)\\
@@ -1069,4 +1072,77 @@ $AA^{-1} = E$ имеет решение тогда и только тогда, �
 
 \subsection{Теорема о ранге произведения матриц}
 я устала, передаю следующим поколениям
+
+\newpage
+\section{Формулы для нахождения определителя. Свойства определителя матрицы. Теорема Крамера.}
+
+Обозначим за $\sigma = (i_1, i_2, \ldots, i_n)$ пересатновку чисел от $1$ до $n$. Тогда чётнотью перестановки $\operatorname{p}(\sigma)$ называется количесвто обменов между двумя соседними элементами в наборе $(1, 2, \ldots, n)$, необходимых, чтобы получить $\sigma$. Тогда \textit{определителем} матрицы $A$ называют:
+
+$$\operatorname{det}A = \sum_{\sigma = (i_1, i_2, \ldots, i_n)} (-1)^{\operatorname{p}(\sigma)} \cdot \prod_{j = 1}^{n}a_{j, i_j}$$
+
+Выведем вторую формулу, на этот раз через число инверсий в перестановке. Инверсией будем называть такую пару индексов $a$ и $b$, что $a < b$ и при этом $i_a > i_b$. Довольно несложно доказать, что четность перестановки совпадает с четностью числа инверсий в перестановке. Таким образом получаем \textbf{вторую формулу длля определителя}:
+ 
+$$\operatorname{det}A = \sum_{\sigma = (i_1, i_2, \ldots, i_n)} (-1)^{\operatorname{inv}(\sigma)} \cdot \prod_{j = 1}^{n}a_{j, i_j}$$
+
+\subsection{Свойства определителя:}
+\begin{enumerate}
+	\item $\operatorname{det}A = \operatorname{det}A^T$
+	\item $\operatorname{det}(\ldots, A_i+\lambda\cdot B,\ldots) = \operatorname{det}(\ldots, A_i, \ldots) + \lambda\cdot \operatorname{det}(\ldots, B, \ldots)$
+	\item $\operatorname{det}(\ldots, \mathbb{O}, \ldots) = 0$
+	\item $\operatorname{det}(\ldots, A_i, \ldots, A_j, \ldots) = -\operatorname{det}(\ldots, A_j, \ldots, A_i, \ldots)$
+	\item $\operatorname{det}(\ldots, A_i + \lambda\cdot A_j, \ldots, A_j, \ldots) = \operatorname{det}(\ldots, A_i, \ldots, A_j, \ldots) + \lambda\cdot\operatorname{det}(\ldots, A_j, \ldots, A_j, \ldots) = \operatorname{det}(\ldots, A_i, \ldots, A_j, \ldots)$
+	\item Определитель блочной матрицы ($A^{(j)}$ "--- блоки одинакового размера, $*$ "--- произвольные числа в блоках такого же размера, $0$ "--- нулевые блоки такого же размера):
+	\begin{equation*}\operatorname{det}
+	\begin{pmatrix}
+		A^{(1)}& 0& \ldots&0\\
+		* & A^{(2)} & \ldots & 0\\
+		\ldots & \ldots & \ldots & \ldots\\
+		* & * & \ldots & A^{(k)}  
+	\end{pmatrix} = \prod_{j = 1}^k \operatorname{det}(A^{(j)})
+	\end{equation*}
+	\item Определитель нижнетреугольной матрицы:
+	\begin{equation*}\operatorname{det}
+	\begin{pmatrix}
+	a_{1, 1} & 0 & \ldots & 0\\
+	a_{1, 2} & a_{2, 2} & \ldots & 0\\
+	\ldots &\ldots &\ldots& \ldots\\
+	a_{1, n} & a_{2, n} & \ldots & a_{n, n}
+	\end{pmatrix} = \prod_{j = 1}^{n} a_{j, j}
+	\end{equation*}
+	\item Для начала определим минор $M_{i, j}$ для матрицы $A$ "--- это матрица, получаемая вычеркиванием из $A$ $i$-ой строки и $j$-ого столбца.
+	\begin{equation*}\operatorname{det}
+	\begin{pmatrix}
+	\text{\rom{1}} & \ldots & a_{1, j} & \ldots &\text{\rom{2}}\\
+	\ldots & \ldots & \ldots & \ldots & \ldots\\
+	a_{i, 1} & \ldots & a_{i, j} & \ldots & a_{i, n}\\
+	\ldots & \ldots&\ldots &\ldots & \ldots\\
+	\text{\rom{3}} & \ldots & a_{n, j} & \ldots & \text{\rom{4}}
+	\end{pmatrix} = \sum_{j = 1}^{n} (-1)^{i + j} \cdot a_{i, j} \cdot M_{i, j}
+	\end{equation*}
+	\item $$\sum_{i = 1, k \neq j}^{n}(-1)^{i+j}\cdot a_{i, j} \cdot M_{i, k} = \sum_{j = 1, k \neq i}^{n} (-1)^{i + j} \cdot a_{i, j} \cdot M_{k, j} = 0$$
+	\item $\operatorname{det}(A\cdot B) = \operatorname{det}A \cdot \operatorname{det}B$
+\end{enumerate}
+
+\subsection{Теорема Крамера}
+
+Матрица называется \textbf{невырожденной}, если её определитель не равен нулю. В противном случае она называется \textbf{вырожденной}.
+
+\subsubsection{Продолжение теоремы об обратной матрице:}
+ Матрица $A$ обратима $\Leftrightarrow$ $A$ "--- невырожденная, при этом:
+ 
+\begin{equation*}A^{-1} = \cfrac{1}{\operatorname{det}A} \cdot \widetilde{A} = \cfrac{1}{\operatorname{det}A} \cdot
+\begin{pmatrix}
+A_{1, 1} & \ldots & A_{1, n}\\
+\ldots & \ldots & \ldots\\
+A_{n, 1} & \ldots & A_{n, n}
+\end{pmatrix}\text{,}
+\end{equation*} где $A_{i, j} = (-1)^{i + j} \cdot M_{i, j}$ "--- алгебраические дополнения элементов матрицы.
+Таким образом получаем цепочку равносильностей:
+$A \; \text{обратно} \;\Leftrightarrow\; \operatorname{rg}A = n\;\Leftrightarrow\; \operatorname{det}A \neq 0$
+
+\subsubsection{Теорема (правило) Крамера:}
+Дана система уранвений $Ax = b$. 
+$\exists ! \;\text{решение} \;\Leftrightarrow\; A\;\text{невырожденная}$.
+При  этом $x_i = \cfrac{\delta_i}{\operatorname{det}A}$, где $\delta_i = \operatorname{det}(A_1, A_2, \ldots, b, \ldots, A_n)$ "--- $b$ стоит на месте $i$-ого столбца.
+ 
 \end{document} 
