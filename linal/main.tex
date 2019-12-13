@@ -1159,6 +1159,77 @@ $\exists ! \;\text{решение} \;\Leftrightarrow\; A\;\text{невырожд
 $$\operatorname{det}A = \sum_{1 \leq j_1 < j_2 <\ldots < j_k \leq n} (-1)^{\sum i + \sum j}\cdot M^{j_1, j_2, \ldots, j_k}_{i_1, i_2, \ldots, i_k} \cdot \overline{M}^{j_1, j_2, \ldots, j_k}_{i_1, i_2, \ldots, i_k}$$
 
 \textbf{Внимание! Приведенное далее доказательство не имеет ничего общего с доказательством, приведёненым на лекции!}
+Оно более длинное и нетривиальное, однако, если в нём разобраться, то всё сразу становится понятно. 
+
+\subsubsection{Разбиение множества перестановок на подмножества}
+Рассмотрим последовательность номеров $(1, 2, \ldots, n)$. Назовём $\mathcal{N}_k$ упорядоченное (не обязательно по возрастанию) подмножество этой последовательности. Выберем из этой последовательности элемент $J = (j_1, j_2, \ldots, j_k)$, в котором номера упорядочены по возрастанию. Тогда номера, не вошедшие в $J$, образуют $J' = (j_1', j_2', \ldots, j_{n-k}')$ (в ней тоже номера упорядочены по возрастанию). Из $\mathcal{N}_k$ выберем элемент $I$ и дополнение к нему $I'$. Помимо этого зафиксируем перестановки $\pi \in S_k$ и $\tau \in S_{n - k}$. Теперь рассмотрим перестановку:
+
+\begin{equation*}
+	\sigma_{I, J}(\pi, \tau) = 
+	\begin{pmatrix}
+	j_1 & \ldots & j_k & j_1' & \ldots & j_{n-k}'\\
+	i_{\pi(1)} & \ldots & i_{\pi(k)} & i_{\tau(1)}' & \ldots & i_{\tau(n - k)'}
+	\end{pmatrix}
+\end{equation*}
+
+Множество всех таких перестановок при фиксированных $I, J$ назовём:
+
+$$S(I, J) = \{\sigma_{I, J}(\pi, \tau) | \pi \in S_k, \tau \in S_{n - k}\}$$
+
+\textbf{Лемма о разбиении множества перестановок на подмножества:}
+
+Для фиксированного $J$ верно:
+\begin{enumerate}
+	\item $S(I_1, J) \bigcap S(I_2, J) \neq \emptyset \;\Leftrightarrow\; I_1 = I_2$
+	\item $\bigcup\limits_{I \in \mathcal{N}_k} S(I, J) = S_n$
+	\item $\operatorname{sign}(\sigma_{I, J}(\pi, \tau)) = \operatorname{sign}(\pi) \cdot \operatorname{sign}(\tau) \cdot (-1)^{\sum_{i \in I} i} \cdot (-1)^{\sum_{j \in J}j}$
+\end{enumerate}
+
+Первое свойство доказывается от противного "--- если есть общий элемент, значит, множества $I_1$ и $I_2$ совпадают. 
+
+Второе свойство тоже простое "--- нужно просто показать, как именно построить любую перестановку.
+
+Третье свойство доказывается сложнее. Разложим перестановку на две:
+ 
+\begin{gather*}
+	\sigma_{I, J}(\pi, \tau) = 
+	\begin{pmatrix}
+	j_1,& \ldots& j_k& j_1', &\ldots& j_{n-k}'\\
+	i_{\pi(1)},& \ldots& i_{\pi(k)}&i_{\tau(1)}', &\ldots &i_{\tau(n - k)'}
+	\end{pmatrix} = \\
+	\begin{pmatrix}
+	1 & \ldots & k & k + 1 & \ldots & n \\
+	j_1 & \ldots & j_k & j_1' & \ldots & j_{n - k}'
+	\end{pmatrix}
+	\cdot 
+	\begin{pmatrix}
+	1 & \ldots & k & k + 1 & \ldots & n \\
+	i_{\pi(1)} & \ldots & i_{\pi(k)} & i_{\tau(1)}' & \ldots & i_{\tau{n - k}}'
+	\end{pmatrix}
+\end{gather*}
+Как известно из курса дискретной математики, знак произведения перестановок перемножается. Теперь посчитаем количества инверсий в первой и второй перестановке произведения.
+
+\begin{enumerate}
+	\item Так как среди элементов отдельно $J$ и $J'$ нет инверсий, так как они упорядочены. Значит, инверсии есть только между ними. $j_1$ образует $j_1 - 1$ инверсию, $j_2$ образует $j_2 - 2$ и так далее. Получается всего $\sum_{m = 1}^{k} j_m - \frac{m\cdot(m + 1)}{2}$.
+	\item 
+	\begin{enumerate}
+		\item Инверсии между элементами $I$ "--- их чётность совпадает со знаком перестановки $\pi$. 
+		\item Инверсии между элементами $I'$ "--- их чётность совпадает со знаком перестановки $\tau$.
+		\item Инверсии между $I$ и $I'$ "--- по аналогии с первым пунктом их будет $\sum_{m = 1}^{k} i_m - \frac{m\cdot(m + 1)}{2}$. 
+	\end{enumerate}
+\end{enumerate}
+
+Итого получим, что знак перестановки $\operatorname{sign}(\sigma_{I, J}(\pi, \tau)) = \operatorname{sign}(\pi) \cdot \operatorname{sign}(\tau) \cdot (-1)^{\sum_{m = 1}^{k} j_m - \frac{m\cdot(m + 1)}{2}} \cdot (-1)^{\sum_{m = 1}^{k} i_m - \frac{m\cdot(m + 1)}{2}} = \operatorname{sign}(\pi) \cdot \operatorname{sign}(\tau) \cdot (-1)^{\sum_{i \in I} i} \cdot (-1)^{\sum_{j \in J}j}$. Лемма доказана.
+
+Перейдём к доказательству самой теоремы:
+\begin{gather*}
+	\operatorname{det}A = \sum_{I\in \mathcal{N}_k} \left(\sum_{\pi \in S_k} \sum_{\tau \in S_{n - k}} \left(a_{i_{\pi(1)}, j_1} \cdot \ldots \cdot a_{i_{\pi(k)}, j}\right) \cdot \left( a_{i_{\tau(1)}', j_1'} \cdot \ldots \cdot a_{i_{\tau(n - k)}', j_{n - k}'} \right) \cdot \operatorname{sign}_{I, J}(\pi, \tau)\right) = \\
+	= (-1)^{\sum\limits_{i \in I} i + \sum\limits_{j \in J}j} \cdot \sum_{I\in \mathcal{N}_k} \left(\sum_{\pi \in S_k} \sum_{\tau \in S_{n - k}} \left(a_{i_{\pi(1)}, j_1} \cdot \ldots \cdot a_{i_{\pi(k)}, j}\right) \cdot \left( a_{i_{\tau(1)}', j_1'} \cdot \ldots \cdot a_{i_{\tau(n - k)}', j_{n - k}'} \right) \cdot \operatorname{sign}(\pi) \cdot \operatorname{sign}(\tau)\right) = \\
+	= 	(-1)^{\sum\limits_{i \in I} i + \sum\limits_{j \in J}j} \cdot \sum_{I\in \mathcal{N}_k} \left(\left(\sum_{\pi \in S_k} a_{i_{\pi(1)}, j_1} \cdot \ldots \cdot a_{i_{\pi(k)}, j} \right) \cdot \left(\sum_{\tau \in S_{n - k}} a_{i_{\tau(1)}', j_1'} \cdot \ldots \cdot a_{i_{\tau(n - k)}', j_{n - k}'} \right)\right) = \\
+	= \sum_{I \in \mathcal{N}_k} (-1)^{\sum i + \sum j}\cdot M^{i_1, i_2, \ldots, i_k}_{j_1, j_2, \ldots, j_k} \cdot \overline{M}^{i_1, i_2, \ldots, i_k}_{j_1, j_2, \ldots, j_k}
+\end{gather*}
+
+Теорема доказана.
 
 \newpage
 \section{Второе определение ранга матрицы. Базисный минор. Теорема об эквивалентности определений ранга, следствие. Метод окаймляющих миноров. Пример.}
