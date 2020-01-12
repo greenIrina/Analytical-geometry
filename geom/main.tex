@@ -1,9 +1,9 @@
 \documentclass{article}
 
-\usepackage[utf8]{inputenc} 
-\usepackage[russian]{babel} 
-\usepackage{amsmath} 
-\usepackage{hyperref} 
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{wrapfig}
@@ -15,7 +15,7 @@
 \usepackage[final]{pdfpages}
 \parindent 0pt
 \parskip 6pt
-\newcommand{\numberset}[1]{\mathbb{#1}} 
+\newcommand{\numberset}[1]{\mathbb{#1}}
 \newcommand{\N}{\numberset{N}}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\R}{\mathbb R}
@@ -31,14 +31,14 @@
     linktoc=all
 }
 
-\title{Ангем (Билеты 1 -- 12)}
+\title{Ангеом (Билеты 1 -- 12)}
 
 \begin{document}
-\maketitle 
+\maketitle
 \tableofcontents
 
 \newpage
-\section{Понятие вектора и основные определения с ним связанные. Линейные операции над векторами. Базис и координаты вектора, арифметические действия с векторами в координатной форме (теорема и следствие). Критерий коллинеарности векторов. Понятие линейной независимости векторов. Декартовая система координат. Задача о делении отрезка в заданном отношении. Декартовая прямоугольная система координат. Длина вектора, орт вектора, направляющие косинусы, проекция вектора на направление.}
+\section{Понятие вектора и основные определения с ним связанные. Линейные операции над векторами. Базис и координаты вектора, арифметические действия с векторами в координатной форме (теорема и следствие). Критерий коллинеарности векторов. Понятие линейной независимости векторов. Декартова система координат. Задача о делении отрезка в заданном отношении. Декартова прямоугольная система координат. Длина вектора, орт вектора, направляющие косинусы, проекция вектора на направление.}
 \subsection{Вектора}
 \subsubsection{Определения}
 \textbf{Вектор} -- математический объект, характеризующийся величиной и направлением. В геометрии \textit{вектор} -- направленный отрезок прямой, то есть отрезок, для которого указано, какая из его граничных точек является началом, а какая — концом. Так же иными словами, \textit{вектор} -- класс эквивалентности направленных отрезков.
@@ -48,16 +48,16 @@
 \begin{enumerate}
     \item Сложение $\overline{a}+\overline{b}=\overline{c}$
     \item Умножение на скаляры $\lambda_i\in\R$: $\lambda\cdot\overline{a}=\overline{d},\,|\lambda\cdot\overline{a}|=\lambda\cdot|\overline{a}|=|\overline{d}|$
-    
-    Свойства 
+
+    Свойства
     \begin{itemize}
-        \item Ассоциавтивность сложения: $(\overline{a}+\overline{b})+\overline{c}=\overline{a}+(\overline{b}+\overline{c})$
+        \item Ассоциативность сложения: $(\overline{a}+\overline{b})+\overline{c}=\overline{a}+(\overline{b}+\overline{c})$
         \item Коммутативность сложения: $\overline{a}+\overline{b}=\overline{b}+\overline{a}$
-        \item $\exists$ нулевого элемента: $\overline{a}+\overline{0}=\overline{0}+\overline{a}=\overline{a}$, $\overline{0}\cdot\overline{a}=\overline{0}$ 
+        \item $\exists$ нулевого элемента: $\overline{a}+\overline{0}=\overline{0}+\overline{a}=\overline{a}$, $\overline{0}\cdot\overline{a}=\overline{0}$
         \item $\exists$ противоположного элемента: $\forall\,\overline{a}:\:\overline{a}+(-1)\cdot\overline{a}=0$
         \item Дистрибутивность относительно векторов: $\forall\,\alpha\in\R:\:\alpha\cdot(\overline{a}+\overline{b})=\alpha\cdot\overline{a}+\alpha\cdot\overline{b}$
         \item Дистрибутивность относительно скаляров: $\forall\,\alpha,\,\beta\in\R:\:(\alpha+\beta)\cdot\overline{a}=\alpha\cdot\overline{a}+\beta\cdot\overline{a}$
-        \item Ассоциацтивность умножения относительно скаляров: $(\alpha\cdot\beta)\cdot\overline{a}=\alpha\cdot(\beta\cdot\overline{a})$
+        \item Ассоциативность умножения относительно скаляров: $(\alpha\cdot\beta)\cdot\overline{a}=\alpha\cdot(\beta\cdot\overline{a})$
     \item $\exists$ нейтрального элемента:    $1\cdot\overline{a}=\overline{a}$
     \end{itemize}
     \item Вычитание $\overline{a}-\overline{b}=\overline{a}+(-1)\cdot\overline{b}=\overline{e}$
@@ -66,7 +66,7 @@
 \subsubsection{Линейные комбинации, линейная зависимость}
 Пусть имеем систему векторов $\overline{a}_1,\ldots,\overline{a}_n$ и набор скаляров $\lambda_1,\ldots,\lambda_n\in\R$, тогда $\lambda_1\cdot\overline{a}_1+\ldots+\lambda_n\cdot\overline{a}_n$ -- \textbf{линейная комбинация} данной системы векторов с данным набором коэффициентов.
 
-Система векторов $\overline{a}_1,\ldots,\overline{a}_n$ называется \textbf{линейно зависимой}, если существует такой набор коэффициентов $\lambda_1,\ldots,\lambda_n\in\R$, из которых хотя бы один не равен нулю, что линейная комбинация данной системы с этим набором коэффициентов равна нулевому вектору $\lambda_1\cdot\overline{a}_1+\ldots+\lambda_n\cdot\overline{a}_n=\overline{0}$. Иными словами, оидн вектор можно выразить через другие.
+Система векторов $\overline{a}_1,\ldots,\overline{a}_n$ называется \textbf{линейно зависимой}, если существует такой набор коэффициентов $\lambda_1,\ldots,\lambda_n\in\R$, из которых хотя бы один не равен нулю, что линейная комбинация данной системы с этим набором коэффициентов равна нулевому вектору $\lambda_1\cdot\overline{a}_1+\ldots+\lambda_n\cdot\overline{a}_n=\overline{0}$. Иными словами, один вектор можно выразить через другие.
 
 Система векторов $\overline{a}_1,\ldots,\overline{a}_n$ называется \textbf{линейно независимой}, если её линейная комбинация $\lambda_1\cdot\overline{a}_1+\ldots+\lambda_n\cdot\overline{a}_n$ равна нулевому вектору только при наборе коэффициентов $\lambda_1,\ldots,\lambda_n\in\R$ таких, что $\lambda_i=0$. Иными словами, ни один веткор нельзя выразить через другой.
 \subsubsection{Базисы}
@@ -134,7 +134,7 @@ $\overline{a} = \alpha_1\cdot\overline{e}_1 +\ldots+ \alpha_n\cdot\overline{e}_n
 равенства $\overline{OC}=\overline{OA}+\overline{AC}$ и $\overline{OB} = \overline{OC} +\overline{CB}\,\Leftrightarrow\,\overline{CB} = \overline{OB} - \overline{OC}$. Их мы используем в следующем абзаце.
 
 Так как точка $С$ делит отрезок $АВ$ в соотношении $\lambda$, то $|\overline{AC}|=\lambda\cdot|\overline{CB}|$. Векторы $\overline{AC}$ и $\overline{CB}$ лежат на одной прямой и имеют одинаковое направление, а выше мы отметили, что $\lambda>0$, поэтому, по определению операции умножения вектора на число, справедливо равенство $\overline{AC} = \lambda\cdot\overline{CB}$ . Подставив в него $\overline{CB} = \overline{OB} - \overline{OC}$ , имеем $\overline{AC} = \lambda\cdot(\overline{OB} - \overline{OC})$.
-Тогда равенство $\overline{OC} = \overline{OA} +\lambda\cdot(\overline{OB} - \overline{OC})$, откуда в силу свойств операций над векторами получаем: 
+Тогда равенство $\overline{OC} = \overline{OA} +\lambda\cdot(\overline{OB} - \overline{OC})$, откуда в силу свойств операций над векторами получаем:
 $$ \overline{OC} =\frac{1}{1+\lambda}\cdot(\overline{OA}+\lambda\cdot\overline{OB}) $$
 Осталось вычислить координаты вектора $\overline{OC} =\frac{1}{1+\lambda}\cdot(\overline{OA}+\lambda\cdot\overline{OB})$, выполнив необходимые операции над векторами $\overline{OA}$ и $\overline{OB}$ в координатах. Так как $\overline{OA}=(x_a,y_a)$ и $\overline{OB}=(x_b,y_b)$, то $\overline{OA}+\lambda\cdot\overline{OB}=(x_a+\lambda\cdot x_b,\,y_a+\lambda\cdot y_b)$, а следовательно:
 $$ \overline{OC}= \frac{1}{1+\lambda}\cdot(\overline{OA}+\lambda\cdot\overline{OB}) = \bigg(\frac{x_a+\lambda\cdot x_b}{1+\lambda},\,\frac{y_a+\lambda\cdot y_b}{1+\lambda}\bigg)$$
@@ -143,7 +143,7 @@ $$ \overline{OC}= \frac{1}{1+\lambda}\cdot(\overline{OA}+\lambda\cdot\overline{O
 \subsection{Полярная система координат}
 \subsubsection{Определение}
 \textbf{Полярная система координат} определяется заданием некоторой точки $O$, называемой полюсом, исходящего из этой точки луча $OA$ (обозначается также и как $Ox$), называемого полярной осью, и масштаба для изменения длин. Кроме того, при задании полярной системы координат должно быть определено, какие повороты вокруг точки O считаются положительными (на чертежах обычно положительными считаются повороты против часовой стрелки).
-\subsubsection{Связь полярных координат с декартововыми координатами}
+\subsubsection{Связь полярных координат с декартовыми координатами}
 Установим связь между полярными координатами точки и её декартовыми координатами. Будем предполагать, что начало декартовой прямоугольной системы координат находится в полюсе, а положительная полуось абсцисс совпадает с полярной осью. Пусть точка $M$ имеет декартовы координаты $x$ и $y$ и полярные координаты $\rho$ и $\varphi$. Тогда $x=\rho\cdot\cos(\varphi);\:y=\rho\cdot\sin(\varphi)$.
 \subsection{Преобразования прямоугольной ДСК}
 
@@ -153,20 +153,18 @@ $$ \overline{OC}= \frac{1}{1+\lambda}\cdot(\overline{OA}+\lambda\cdot\overline{O
         \includegraphics[scale=0.3]{pic33.png}
     \end{wrapfigure}
     $\overline{OO'}=(x_0,y_0,z_0)=O'$ -- координаты нового центра СК в старых координатах.
-    
+
     $\overline{r}=(x,y,z)=M=\overline{OM}$
-    
+
     $\overline{r}==\overline{OO'}+\overline{r'}$
-    
+
     $ \overline{r}'=(x',y'z') $
-    
+
     $$ \begin{cases}x=x_0+x'\\y=y_0+y'\\z=z_0+z' \end{cases}$$
-    lalalalala
-    
-    lallalalallaall
-    
-    alallalalalalalla
-    
+    lalalalala...
+
+    lallalalala!
+
 \newpage
 \subsubsection{Поворот на плоскости}
     \begin{wrapfigure}{l}{0.3\textwidth}
@@ -176,16 +174,16 @@ $$ \overline{OC}= \frac{1}{1+\lambda}\cdot(\overline{OA}+\lambda\cdot\overline{O
     $$ \begin{cases} x'=r\cos\varphi \\y'=r\sin\varphi \end{cases}$$
     $$ \begin{cases} x=r\cos(\varphi+\alpha) \\ y=r\sin(\varphi+\alpha) \end{cases} $$
     $$ \begin{cases}x=x'\cdot\cos\alpha-y'\cdot\sin\alpha\\y=x'\cdot\sin\alpha+y'\cdot\cos\alpha\end{cases}\,\Leftrightarrow\,\begin{cases} x'=\cos\alpha x +\sin\alpha y\\y'=-\sin\alpha x+\cos\alpha y \end{cases}$$
-    
+
     lalala
-    
+
 \subsubsection{Поворот в пространстве}
-    
+
     Матрица поворота
-    \textit{ух епт поехали выводить это говно}
-    
+    \textit{ух ёпт, поехали выводить это говно}
+
     Базисные векторы в изначальной ДСК -- $\overline{i},\,\overline{
-    j},\,\overline{k}$. Базисные вектора в новой системы координат -- $\overline{e}_1,\,\overline{e}_2,\,\overline{e}_3$. То есть, $\overline{r}=x\overline{i}+y\overline{j}+z\overline{k}=x'\overline{e}_1+y'\overline{e}_2+z'\overline{e}_3 $. Вектора $\overline{e}_1=(\cos\alpha_1,\cos\beta_1,\cos\gamma_1)^T,\,\overline{e}_2=(\cos\alpha_2,\cos\beta_2,\cos\gamma_2)^T,\,\overline{e}_3=(\cos\alpha_3,\cos\beta_3,\cos\gamma_3)^T$, где $\alpha_1,\,\beta_1,\,\gamma_1$ -- углы между вектором $\overline{e}_1$ и соответсвенно осями $Ox,\,Oy,\,Oz$ (остальные углы аналогично). Тогда
+    j},\,\overline{k}$. Базисные вектора в новой системы координат -- $\overline{e}_1,\,\overline{e}_2,\,\overline{e}_3$. То есть, $\overline{r}=x\overline{i}+y\overline{j}+z\overline{k}=x'\overline{e}_1+y'\overline{e}_2+z'\overline{e}_3 $. Вектора $\overline{e}_1=(\cos\alpha_1,\cos\beta_1,\cos\gamma_1)^T,\,\overline{e}_2=(\cos\alpha_2,\cos\beta_2,\cos\gamma_2)^T,\,\overline{e}_3=(\cos\alpha_3,\cos\beta_3,\cos\gamma_3)^T$, где $\alpha_1,\,\beta_1,\,\gamma_1$ -- углы между вектором $\overline{e}_1$ и соответственно осями $Ox,\,Oy,\,Oz$ (остальные углы аналогично). Тогда
     $$ \begin{cases} x=x'\cos\alpha_1+y'\cos\alpha_2+z'\cos\alpha_3 \\ y=x'\cos\beta_1+y'\cos\beta_2+z'\cos\beta_3 \\ z=x'\cos\gamma_1+y'\cos\gamma_2+z'\cos\gamma_3 \end{cases} $$
     Ну или матрциа поворота
     \[
@@ -199,14 +197,14 @@ $$ \overline{OC}= \frac{1}{1+\lambda}\cdot(\overline{OA}+\lambda\cdot\overline{O
     \cos\alpha_1 & \cos\alpha_2 & \cos\alpha_3 \\
     \cos\beta_1 & \cos\beta_2 & \cos\beta_3 \\
     \cos\gamma_1 & \cos\gamma_2 & \cos\gamma_3
-    \end{bmatrix} \cdot 
+    \end{bmatrix} \cdot
     \begin{bmatrix}
     x' \\
     y' \\
     z'
     \end{bmatrix}
     \]
-    
+
 \newpage
 \section{Скалярное произведение векторов и его свойства. Выражение координат вектора через скалярное произведение. Критерий ортогональности векторов. Формула скалярного произведения в координатном представлении.}
 \subsection{Скалярное произведение векторов}
@@ -221,8 +219,8 @@ $$\overline{a}\cdot \overline{b} = |\overline{a}|\cdot |\overline{b}| \cos\alpha
     \item Симметричность или коммутативность: $\overline{a}\cdot\overline{b}=\overline{b}\cdot\overline{a}$
     \item Аддитивность (линейность): $(\overline{a}_1+\overline{a}_2)\cdot\overline{b}=\overline{a}_1\cdot\overline{b}+\overline{a}_2\cdot\overline{b}$
     \item Однородность: $(\lambda\cdot\overline{a})\cdot\overline{b}=\lambda\cdot(\overline{a}\cdot\overline{b})$
-    
-    2 и 3 свойства дают линейность по первому аргументу, а всилу свойства 1 -- ещё и линейность по второму.
+
+    2 и 3 свойства дают линейность по первому аргументу, а в силу свойства 1 -- ещё и линейность по второму.
     \item Произведение вектора самого на себя: $\overline{a}\cdot\overline{a}\geqslant 0;\;\overline{a}\cdot\overline{a}=|\overline{a}|^2$
 \end{enumerate}
 \subsubsection{Критерий ортогональности векторов}
@@ -253,8 +251,8 @@ $$\overline{a}\times\overline{b}=[\overline{a},\overline{b}]=|\overline{a}|\cdot
     \item Векторное произведения двух не нулевых векторов $\overline{a}$ и $\overline{b}$ равно нулю тогда и только  тогда, когда вектора коллинеарны.
     \item Вектор $\overline{c}$, равный векторному произведению ненулевых векторов $\overline{a}$ и $\overline{b}$, перпендикулярен этим векторам.
     \item Антикоммутативность: $\overline{a} \times \overline{b}=-\overline{b}\times\overline{a}$
-    \item Ассоциативность относительно скаляра: $(\lambda\cdot\overline{a}\times\overline{b})=\overline{a}\times(\lambda\cdot\overline{b})=\lambda\cdot(\overline{a}\times\overline{b})$ 
-    
+    \item Ассоциативность относительно скаляра: $(\lambda\cdot\overline{a}\times\overline{b})=\overline{a}\times(\lambda\cdot\overline{b})=\lambda\cdot(\overline{a}\times\overline{b})$
+
 \end{enumerate}
 
 \subsubsection{Координатное представление}
@@ -275,16 +273,16 @@ $$\overline{a}\times\overline{b}=[\overline{a},\overline{b}]=|\overline{a}|\cdot
  Векторное произведение линейно по каждому аргументу, т.е. для любых векторов и для любого числа $\lambda$ выполняется
  $$ [\overline{a}_1+\overline{a}_2,\overline{b}]=[\overline{a}_1,\overline{b}]+[\overline{a}_2,\overline{b}] $$
  $$ [\lambda\cdot\overline{a},\overline{b}]=[\overline{a},\lambda\cdot\overline{b}]=\lambda\cdot[\overline{a},\overline{b}] $$
- 
+
 \textbf{Доказательство}
 
 Пусть $\overline{c}=[\overline{a}_1+\overline{a}_2,\overline{b}]-[\overline{a}_1,\overline{b}]-[\overline{a}_2,\overline{b}]$. Докажем, что он равен нулю, доказав, что его скалярный квадрат равен нулю, т.е. что $(\overline{c},\overline{c})=0$. (Применим свойства линейности скалярного произведения и определение смешанного произведения\footnote{см. п. 4.2})
 $$ (\overline{c},\overline{c})=([\overline{a}_1+\overline{a}_2]-[\overline{a}_1,\overline{b}]-[\overline{a}_2,\overline{b}],\overline{c})=([\overline{a}_1+\overline{a}_2,\overline{b}],\overline{c})-([\overline{a}_1,\overline{b}],\overline{c})-([\overline{a}_2,\overline{b}],\overline{c})= $$
 $$ =(\overline{a}_1+\overline{a}_2,\overline{b},\overline{c})-(\overline{a}_1,\overline{b},\overline{c})-(\overline{a}_2,\overline{b},\overline{c}) =-(\overline{c},\overline{b},\overline{a}_1+\overline{a}_2)+(\overline{c},\overline{b},\overline{a}_1)+(\overline{c},\overline{b},\overline{a}_2)=$$
 $$ =-([\overline{c},\overline{b}],\overline{a}_1+\overline{a}_2)+([\overline{c},\overline{b}],\overline{a}_1)+([\overline{c},\overline{b}],\overline{a}_2)=0 $$
-\n 
-\n 
-\n 
+\n
+\n
+\n
 \subsection{Смешанное произведение векторов}
 \subsubsection{Определение}
 \textbf{Смешанное произведение векторов} — скалярное произведение вектора $\overline{a}$ на
@@ -334,7 +332,7 @@ $$ \frac{x}{a}+\frac{y}{b}=1\:(a\neq 0,\, b\neq 0) $$
 $$ \frac{x-x_0}{\alpha}=\frac{y-y_0}{\beta} $$
 \subsubsection{Нормальное векторное уравнение}
 $(\overline{r} - \overline{r}_0, \overline{n}) = 0, n \neq 0$, где $\overline{n}$ -- вектор нормали к прямой, $\overline{r}_0$ -- радиус вектор
-фиксированной точки, $\overline{r}$ -- радиус-вектор любой точки прямой. Это уравнение также можно записать в форме $(\overline{r}, \overline{n}) = D, \overline{n} \neq 0$, или в форме $x\cdot\cos\alpha+y\cdot\sin\alpha-P=0$, где $\alpha$ -- угол между нормальню $\overline{n}$ и осью $Ox$, a $P$ -- проекция радиус-вектора $\overline{r}$ на вектор нормали.
+фиксированной точки, $\overline{r}$ -- радиус-вектор любой точки прямой. Это уравнение также можно записать в форме $(\overline{r}, \overline{n}) = D, \overline{n} \neq 0$, или в форме $x\cdot\cos\alpha+y\cdot\sin\alpha-P=0$, где $\alpha$ -- угол между нормалью $\overline{n}$ и осью $Ox$, a $P$ -- проекция радиус-вектора $\overline{r}$ на вектор нормали.
 \newline
 \newpage
 \begin{center}
@@ -345,7 +343,7 @@ $(\overline{r} - \overline{r}_0, \overline{n}) = 0, n \neq 0$, где $\overline
     \includegraphics[width=0.25\textwidth]{pci2.png}
 \end{wrapfigure}
 
-Расстояние от точки $O$ до прямой $L$ равняется $P$, что, в свою очередь, является проекцией раиус-вектора $\overline{r}$ на орт-вектор нормали $\overline{n}_0$. Координаты вектора $\overline{n}_0=(\cos\alpha,\sin\alpha)$, где $\alpha$ -- угол между осью $Ox$ и орт-вектором $\overline{n}_0$.
+Расстояние от точки $O$ до прямой $L$ равняется $P$, что, в свою очередь, является проекцией радиус-вектора $\overline{r}$ на орт-вектор нормали $\overline{n}_0$. Координаты вектора $\overline{n}_0=(\cos\alpha,\sin\alpha)$, где $\alpha$ -- угол между осью $Ox$ и орт-вектором $\overline{n}_0$.
 
 Скалярное произведение векторов $(\overline{r},\overline{n}_0)$ равняется $P$ и так же равняется $x\cdot\cos\alpha+y\cdot\sin\alpha$. Следовательно, $x\cdot\cos\alpha+y\cdot\sin\alpha-P=0$ -- нормальное уравнение прямой.
 
@@ -354,7 +352,7 @@ $$ \frac{A}{\pm\sqrt{A^2+B^2}}x+\frac{B}{\pm\sqrt{A^2+B^2}}y+\frac{C}{\pm\sqrt{A
 $$\,\Leftrightarrow\,\frac{A}{\pm\sqrt{A^2+B^2}} = \cos\alpha,\,\frac{B}{\pm\sqrt{A^2+B^2}}=\sin\alpha, \frac{C}{\pm\sqrt{A^2+B^2}}=-P\,\Leftrightarrow$$
 $$ \Leftrightarrow\,x\cdot\cos\alpha+y\cdot\sin\alpha-P=0$$
 \newpage
-\subsubsection{Полярное уравнение} 
+\subsubsection{Полярное уравнение}
 Полярное уравнение в полярной системе координат задаётся через радиус-вектор $\overline{r}$, углом $\varphi$ между радиус-вектором и осью $Ox$, проекцией $P$ радиус-вектора на нормаль прямой и углом $\alpha$ между нормалью и осью $Ox$.
 $$ \begin{cases} x=\overline{r}\cdot\cos\varphi \\y=\overline{r}\cdot\sin\varphi \end{cases}\,\Leftrightarrow\;\overline{r}=\frac{P}{cos(\varphi-\alpha)} $$
 \begin{center}
@@ -398,7 +396,7 @@ $$ d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}} $$
 \textbf{Общее уравнение плоскости} : $Ax + By + Cz + D = 0$ ($A$, $B$, $C$ одновременно не равны
 нулю). Вектор с координатами $\overline{n}=(A, B, C)$ является \textit{нормальным вектором} к плоскости.
 
-$\bullet$ Пусть нам дана прямоугольная система координат $Oxyz$ в трехмерном пространстве, уравнением плоскости в заданной системе координат будет такое уравнение с тремя неизвестными $x$, $y$, $z$, которому отвечали бы координаты всех точек этой плоскости и не отвечали бы координаты никаких прочих точек. Иначе говоря, подставив в уравнение плоскости координаты некоторой точки этой плоскости, получаем тождество. $\bullet$ 
+$\bullet$ Пусть нам дана прямоугольная система координат $Oxyz$ в трехмерном пространстве, уравнением плоскости в заданной системе координат будет такое уравнение с тремя неизвестными $x$, $y$, $z$, которому отвечали бы координаты всех точек этой плоскости и не отвечали бы координаты никаких прочих точек. Иначе говоря, подставив в уравнение плоскости координаты некоторой точки этой плоскости, получаем тождество. $\bullet$
 
 \textbf{ТЕОРЕМА}. Всякое уравнение вида $Ax+By+Cz+D=0$, где $A$, $B$, $C$ и $D$ -- некоторые действительные числа, причем $A$, $B$ и $C$ одновременно не равны нулю, определяет плоскость в прямоугольной системе координат $Oxyz$ в трехмерном пространстве, и всякая плоскость в прямоугольной системе координат $Oxyz$ в трехмерном пространстве может быть задана уравнением вида $Ax+By+Cz+D=0$.
 
@@ -421,9 +419,9 @@ II. Во второй части теоремы утверждается, что
  задает некоторую плоскость в прямоугольной системе координат $Oxyz$
  трехмерного пространства. Докажем это.
 
-В силу того, что $A,\,B,\,C\neq 0$, существует такая точка $M_0(x_0,y_0,z_0)$, координаты которой отвечают уравнению $Ax+By+Cz+D=0$, то есть получим равенство $Ax_0+By_0+Cz_0+D=0$. Отнимем левую и правую части этого равенства от левой и правой частей уравнения $Ax+By+Cz+D=0$, получим $A(x-x_0)+B(y-y_0)+C(z-z_0)=Ax+By+Cz-(Ax_0+By_0+Cz_0)=0$, которое квивалентно исходному. Докажем, что оно задаёт плсокость.
+В силу того, что $A,\,B,\,C\neq 0$, существует такая точка $M_0(x_0,y_0,z_0)$, координаты которой отвечают уравнению $Ax+By+Cz+D=0$, то есть получим равенство $Ax_0+By_0+Cz_0+D=0$. Отнимем левую и правую части этого равенства от левой и правой частей уравнения $Ax+By+Cz+D=0$, получим $A(x-x_0)+B(y-y_0)+C(z-z_0)=Ax+By+Cz-(Ax_0+By_0+Cz_0)=0$, которое эквивалентно исходному. Докажем, что оно задаёт плоскость.
 
-Данное уравнение представляем собой скалярное произведение векторов $\overline{n}=(A,B,C)$ и $\overline{M_0M}=(x-x_0,y-y_0,z-z_0)$ -- следовательно, в силу равенства нулю, вектора перпендикулярны. Опираясь на утверждение, указанное перед теоремой, возможно утверждать, что при справедливом равенстве $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$ множество точек $M(x,y,z)$ задаёт плоскость, у которой нормальный вектор $\overline{n}=(A,B,C)$. При этом плоскость проходит через точку $M_0$. Иначе говоря, уравнение $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$ задаёт плоскость. Если примем $D=-(Ax_0+By_0+Cz_0)=0$, то получим уравнение $Ax+By+Cz+D=0$, то есть уранвение исходное, что и требовалось доказать.
+Данное уравнение представляем собой скалярное произведение векторов $\overline{n}=(A,B,C)$ и $\overline{M_0M}=(x-x_0,y-y_0,z-z_0)$ -- следовательно, в силу равенства нулю, вектора перпендикулярны. Опираясь на утверждение, указанное перед теоремой, возможно утверждать, что при справедливом равенстве $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$ множество точек $M(x,y,z)$ задаёт плоскость, у которой нормальный вектор $\overline{n}=(A,B,C)$. При этом плоскость проходит через точку $M_0$. Иначе говоря, уравнение $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$ задаёт плоскость. Если примем $D=-(Ax_0+By_0+Cz_0)=0$, то получим уравнение $Ax+By+Cz+D=0$, то есть уравнение исходное, что и требовалось доказать.
 \subsubsection{Уравнение в отрезках}
 Если плоскость пересекает оси $Ox$, $Oy$ и $Oz$ в точках с координатами $(a, 0, 0)$, $(0, b, 0)$ и $(0, 0, с)$, то она может быть найдена, используя формулу уравнения плоскости в отрезках:
 $$ \frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1\:(a,b,c\neq0) $$
@@ -456,7 +454,7 @@ $$ \frac{A}{\pm\sqrt{A^2+B^2+C^2}}\cdot x+\frac{B}{\pm\sqrt{A^2+B^2+C^2}}\cdot y
 $$ \Leftrightarrow\,\cos\alpha=\frac{A}{\pm\sqrt{A^2+B^2+C^2}},\,\cos\beta=\frac{B}{\pm\sqrt{A^2+B^2+C^2}},\,\cos\gamma=\frac{C}{\pm\sqrt{A^2+B^2+C^2}},\,-P=\frac{D}{\pm\sqrt{A^2+B^2+C^2}}\,\Leftrightarrow $$
 $$ \Leftrightarrow\,x\cdot\cos\alpha+y\cdot\cos\beta+z\cdot\cos\gamma-P=0$$
 \newpage
-\subsection{Растсояние от точки до плоскости}
+\subsection{Расстояние от точки до плоскости}
 \begin{wrapfigure}{l}{0.3\textwidth}
     \centering
     \includegraphics[width=0.25\textwidth]{pic5.png}
@@ -520,8 +518,8 @@ $$ \overline{s}\perp\overline{n}_1,\,\overline{s}\perp\overline{n}_2\,\Rightarro
 \begin{enumerate}
     \item Предположим, что координаты $M_0(0,y_0,z_0)$. Решим систему уравнений:
     $$ \begin{cases}B_1y_0+C_1z_0+D_1=0\\B_2y_0+C_2z_0+D_2=0 \end{cases} $$
-    Если есть решения, то точка $M_0$ нам подходит, можем составить каноническое и параметрическое уравнения. 
-    
+    Если есть решения, то точка $M_0$ нам подходит, можем составить каноническое и параметрическое уравнения.
+
     Если решений нет, то прямая $L\,||Oyz$, смотрим $M_0(x_0,0,z_0)$
     \item аналогично, если подставив координаты точки $M_0(x_0,0,z_0)$ в исходную систему и если решения есть, то точка подходит; если решений нет, то $L\,||Oxz$, смотрим точку $M_0(x_0,y_0,0)$
     \item Если точки $M_0(0,y_0,z_0)$ и $M_0(x_0,0,z_0)$ не подошли, то точка $M_0(x_0,y_0,0)$ обязана подойти.
@@ -534,7 +532,7 @@ $$ \begin{cases}(x-x_0)\cdot m=(y-y_0)\cdot l\:\::\:\alpha_1\\(x-x_0)\cdot n=(z-
 Плоскость $\alpha\::\:Ax+By+Cz+D=0$, прямая $L\::\:\overline{s}=(l,m,n),\,M_0(x_0,y_0,z_0)$
 \subsubsection{Прямая параллельна плоскости}
 $$ L\,||\alpha\,\Leftrightarrow\,\overline{n}\perp\overline{n}\,\Leftrightarrow\,(\overline{s},\overline{n})=0\,\Leftrightarrow\,Al+Bm+Cn=0$$
-Если прямая пренадлежит плоскости:
+Если прямая принадлежит плоскости:
 $$ \begin{cases}Al+Bm+Cn=0\\Ax_0+By_0+Cz_0+D=0\end{cases} $$
 \subsubsection{Прямая пересекает плоскость}
 \begin{center}
@@ -568,7 +566,7 @@ $$ d(L_1,L_2)=h=\frac{V}{S_{\,\overline{s}_1,\,\overline{s}_2}}=\frac{|\overline
 \end{wrapfigure}
 Допустим даны две прямые $L_1$ и $L_2$, их точки $M_1(x_1,y_1,z_1)$ и $M_2(x_2,y_2,z_2)$.
 
-Нужно составить уравнение прямой $L$ -- общего перепендикуляра скрещивающихся прямых $L_1$ и $L_2$.
+Нужно составить уравнение прямой $L$ -- общего перпендикуляра скрещивающихся прямых $L_1$ и $L_2$.
 \begin{enumerate}
     \item Находим координаты векторов $\overline{s}_1=(l_1,m_1,n_1)$ и $\overline{s}_2=(l_2,m_2,n_2)$ -- направляющих векторов прямых $L_1$ и $L_2$.
     \item Находим координаты $(A_1,B_1,C_1)$ вектора нормали $\overline{n}$ плоскости $\alpha_1$, проходящей через прямую $L_1$ параллельно прямой $L_2$, из равенства $\overline{n}=\overline{s}_1\times\overline{s}_2$. Этот вектор будет являться направляющим вектором $\overline{s}$ для искомой прямой $L$.
@@ -586,8 +584,8 @@ $$ d(L_1,L_2)=h=\frac{V}{S_{\,\overline{s}_1,\,\overline{s}_2}}=\frac{|\overline
 \textbf{РЕШЕНИЕ}
 \begin{enumerate}
     \item Находим уравнение плоскости, которая перпендикулярна данной прямой и проходит через точку $M_1(x_1,y_1,z_1)$. Так как плоскость перпендикулярна заданной прямой, то в качестве ее вектора нормали можно взять направляющий вектор прямой, т.е. $\overline{n}=\overline{s}=(l,m,n)$ Поэтому уравнение плоскости будет иметь вид $\alpha\::\:l(x-x_1)+m(y-y_1)+n(z-z_1)=0$.
-    \item Находим точку $M_3(x_3,y_3,z_3)$ переесечения прямой $L$ и плоксоти $\alpha$.
-    \item Точка $M_3(x_3,y_3,z_3)$ является середтиной отрезка $M_1M_2$, где точка $M_2(x_2,y_2,z_2)$ является искомой точкой (dough), поэтому 
+    \item Находим точку $M_3(x_3,y_3,z_3)$ пересечения прямой $L$ и плоскости $\alpha$.
+    \item Точка $M_3(x_3,y_3,z_3)$ является серединой отрезка $M_1M_2$, где точка $M_2(x_2,y_2,z_2)$ является искомой точкой (duh), поэтому
     $$ \begin{cases}x_2=2x_3-x_1\\y_2=2y_3-y_1\\z_2=2z_3-z_1 \end{cases} $$
 \end{enumerate}
 \subsubsection{Симметрия относительно плоскости}
@@ -596,8 +594,8 @@ $$ d(L_1,L_2)=h=\frac{V}{S_{\,\overline{s}_1,\,\overline{s}_2}}=\frac{|\overline
 \textbf{РЕШЕНИЕ}
 \begin{enumerate}
     \item Находим уравнение прямой, которая перпендикулярна данной плоскости и проходит через точку $M_1(x_1,y_1,z_1)$. Так как прямая перпендикулярна заданной плоскости, то в качестве ее направляющего вектора можно взять вектор нормали плоскости, т.е. $\overline{s}=\overline{n}=(A,B,C)$. Поэтому уравнение прямой будет: $L\::\:\cfrac{x-x_1}{A}=\cfrac{y-y_1}{B}=\cfrac{z-z_1}{C}$.
-    \item Находим точку $M_3(x_3,y_3,z_3)$ переесечения прямой $L$ и плоксоти $\alpha$.
-    \item Точка $M_3(x_3,y_3,z_3)$ является середтиной отрезка $M_1M_2$, где точка $M_2(x_2,y_2,z_2)$ является искомой точкой (dough), поэтому 
+    \item Находим точку $M_3(x_3,y_3,z_3)$ пересечения прямой $L$ и плоскости $\alpha$.
+    \item Точка $M_3(x_3,y_3,z_3)$ является серединой отрезка $M_1M_2$, где точка $M_2(x_2,y_2,z_2)$ является искомой точкой (duh), поэтому
     $$ \begin{cases}x_2=2x_3-x_1\\y_2=2y_3-y_1\\z_2=2z_3-z_1 \end{cases} $$
 \end{enumerate}
 
@@ -609,7 +607,7 @@ $$ d(L_1,L_2)=h=\frac{V}{S_{\,\overline{s}_1,\,\overline{s}_2}}=\frac{|\overline
 \begin{center}
     \includegraphics[scale=0.4]{pic13.png}
 \end{center}
-Следовательно, должно выполняться условие компланарности трех векторов $\overline{M_1M}$, $\overline{M_1M}_2$ и $\overline{M_1M}_3$ -- то есть, их смешнное произведение должно равняться нулю.
+Следовательно, должно выполняться условие компланарности трех векторов $\overline{M_1M}$, $\overline{M_1M}_2$ и $\overline{M_1M}_3$ -- то есть, их смешанное произведение должно равняться нулю.
 
 \[
     \overline{M_1M}\cdot\overline{M_1M}_2\cdot\overline{M_1M}_3
@@ -623,7 +621,7 @@ $$ d(L_1,L_2)=h=\frac{V}{S_{\,\overline{s}_1,\,\overline{s}_2}}=\frac{|\overline
     \]
 \newpage
 \section{Всё про алгебраические кривые второго порядка на плоскости (эллипс, гипербола, парабола).}
-\subsection{Таблицка}
+\subsection{Табличка}
 \begin{center}
 \begin{tabular}{ |m{2em}|m{12em}|m{12em}|m{12em}|}
     \hline
@@ -631,9 +629,9 @@ $$ d(L_1,L_2)=h=\frac{V}{S_{\,\overline{s}_1,\,\overline{s}_2}}=\frac{|\overline
     \hline
     \rotatebox{90}{I определение } & \includegraphics[scale=0.2]{pic14.png} &  \includegraphics[scale=0.2]{pic15.png} & \begin{center}\includegraphics[scale=0.3]{pic16.png}\end{center}\\
     & $$ r_1+r_2=2a>2c $$ $F_1$ и $F_2$ -- фокусы, $r_1$ и $r_2$ -- фокальные радиусы. & $$ |r_2-r_1|=2a<2c $$ $F_1$ и $F_2$ -- фокусы, $r_1$ и $r_2$ -- фокальные радиусы. & $$ r=d $$ $F$ -- фокус, $r$ -- фокальный радиус.\\
-    \hline 
+    \hline
     \rotatebox{90}{Каноническое $\;\;\;\;$}$\;$ \rotatebox{90}{ уравнение $\;\;\;\;$} & \includegraphics[scale=0.19]{pic17.png} & \includegraphics[scale=0.19]{pic18.png} & \begin{center}\includegraphics[scale=0.22]{pic19.png}\end{center}\\
-    & $$ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\,b^2=a^2-c^2 $$ $a$ и $b$ -- большая и малая полуоси. & $$ \frac{x^2}{a^2}-\frac{y^2}{b^2}=1,\,b^2=c^2-a^2 $$ $a$ и $b$ -- действительная и мнимая полуоси. Ассимптоты $y=\pm\frac{b}{a}\cdot x$, вершины $a$ и $-a$. & $$ y^2=2Px $$\\
+    & $$ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\,b^2=a^2-c^2 $$ $a$ и $b$ -- большая и малая полуоси. & $$ \frac{x^2}{a^2}-\frac{y^2}{b^2}=1,\,b^2=c^2-a^2 $$ $a$ и $b$ -- действительная и мнимая полуоси. Асимптоты $y=\pm\frac{b}{a}\cdot x$, вершины $a$ и $-a$. & $$ y^2=2Px $$\\
     \hline
     \rotatebox{90}{Эксцен- }$\;$\rotatebox{90}{триситет } & $$ \xi =\frac{c}{a}<1 $$ если $\xi=1$ -- окружность & $$\xi =\frac{c}{a}>1 $$ & $$\xi=1$$\\
     \hline
@@ -686,12 +684,12 @@ $$ d(L_1,L_2)=h=\frac{V}{S_{\,\overline{s}_1,\,\overline{s}_2}}=\frac{|\overline
 \end{wrapfigure}
 Будем рассматривать для верхней полуплоскости, то есть $x\in(-a;a)$, $y>0$. Уравнение эллипса в таком случае:
 $$ y=b\cdot\sqrt{1-\frac{x^2}{a^2}} $$
-Уравнение производной в точке $M_0(x_0,y_0)$ (принадлежащей эллипсу): 
+Уравнение производной в точке $M_0(x_0,y_0)$ (принадлежащей эллипсу):
 $$ y-y_0=f'(x_0)(x-x_0) $$
 Найдём производную.
 $$ y'=b\cdot\cfrac{-\cfrac{2x}{a^2}}{2\cdot\sqrt{1-\cfrac{x^2}{a^2}}}=\cfrac{-bx}{a^2\cdot\sqrt{1-\cfrac{x^2}{a^2}}} $$
 $$ y'(x_0)=\cfrac{-bx_0}{a^2\cdot\sqrt{1-\cfrac{x_0^2}{a^2}}}=\cfrac{-bx_0}{a^2\cdot\cfrac{y_0}{b}}=-\frac{b^2x_0}{a^2y_0} $$
-Т.к. точка $M_0$ лежит на эллипсе, то уранвение эллипса подходит и для неё, т.е. $y_0=b\cdot\sqrt{1-\cfrac{x_0^2}{a^2}}$. Подставим всю дичь в уравнение касательной.
+Т.к. точка $M_0$ лежит на эллипсе, то уравнение эллипса подходит и для неё, т.е. $y_0=b\cdot\sqrt{1-\cfrac{x_0^2}{a^2}}$. Подставим всю дичь в уравнение касательной.
 \newpage
 $$ y-y_0=-\frac{b^2x_0}{a^2y_0}\cdot(x-x_0)\,\Leftrightarrow\,a^2y_0(y-y_0)=-b^2x_0(x-x_0)\,\Leftrightarrow $$
 $$ \Leftrightarrow\,a^2y_0y-a^2y_0^2=-b^2x_0x+b^2x_0^2\,\Leftrightarrow\,b^2x_0x+a^2y_0y=b^2x_0^2+a^2y_0^2\:\:|\::(a^2b^2)\,\Leftrightarrow$$
@@ -723,7 +721,7 @@ $$ XF_1+XF_2>PF_1+PF_2, $$
 
 \begin{enumerate}
     \item $B\neq 0$ -- делаем поворот.
-    
+
     $$ \begin{cases}x=x'\cos\alpha-y'sin\alpha \\ y=x'\sin\alpha+y'\cos\alpha \end{cases} $$
     Подставляем в уравнение, приравниваем коэффициент при $x'y'$  нулю (то есть коэффициент $B'$), находим косинус и синус угла $\alpha$, подставляем в уравнение, счастливо живем
     \item $B=0$
@@ -734,7 +732,7 @@ $$ XF_1+XF_2>PF_1+PF_2, $$
     \end{enumerate}
 \end{enumerate}
 \newpage
-\section{Алгебраические поверхности второго порядка. Определение геометрической формы поверхности второго порядка по ее уравнению (метод сечений). Цилиндрические поверхости.}
+\section{Алгебраические поверхности второго порядка. Определение геометрической формы поверхности второго порядка по ее уравнению (метод сечений). Цилиндрические поверхности.}
 \subsection{Основные понятия}
 \textbf{Алгебраические ПВП} -- ГМТ, координаты которых удовлетворяют алгебраическому уравнению второго порядка.
 $$ a_{11}x^2+a_{22}y^2+a_{33}z^2+2a_{12}xy+2a_{13}xz+2a_{23}yz+2a_1x+2a_2y+2a_3z+a_0=0 $$
@@ -760,7 +758,7 @@ $$a_{11}^2+a_{22}^2+a_{33}^2+a_{12}^2+a_{13}^2+a_{23}^2\neq0$$
 \end{center}
 \subsection{Метод сечений}
 
-\textit{Я пипоц какой ленивый}
+\textit{Я пипец какой ленивый}
 \newpage
 \includepdf[pages=-,pagecommand={},width=\textwidth]{3d.pdf}
 \subsection{Цилиндры}
@@ -768,5 +766,5 @@ $$a_{11}^2+a_{22}^2+a_{33}^2+a_{12}^2+a_{13}^2+a_{23}^2\neq0$$
 
 еще есть пара параллельных прямых (плоскостей), прямая (плоскость), точка (прямая)
 
-Короч. на плоскости -- какая-то кривая второго порядка, а в пространстве выходит столбик (ну функция $F(x,y)=0$, где $z=0$)
+Короч, на плоскости -- какая-то кривая второго порядка, а в пространстве выходит столбик (ну функция $F(x,y)=0$, где $z=0$)
 \end{document}
